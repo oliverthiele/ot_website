@@ -1,0 +1,56 @@
+{namespace w=OliverThiele\OtWebsite\ViewHelpers}
+
+
+
+<f:comment>
+	<![CDATA[
+	<!--
+	<div xmlns:f="http://fluidtypo3.org/schemas/fluid-6.2.0.xsd" xmlns:ot="http://typo3.org/ns/fluid/ViewHelpers">
+	<f:debug title="Page">{data}</f:debug>
+	-->
+	]]>
+</f:comment>
+
+<div class="navbar navbar-fixed-top navbar-inverse">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only"><w:translate id="toggle_navigation"/></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<f:link.page pageUid="1" class="navbar-brand" title="Zur Startseite">
+				<f:if condition="{settings.companyName}">
+					<f:then>
+						{settings.companyName}
+					</f:then>
+					<f:else>
+						<span class="glyphicon glyphicon-home"></span>
+					</f:else>
+				</f:if>
+			</f:link.page>
+		</div>
+		<div class="collapse navbar-collapse">
+			<f:cObject typoscriptObjectPath="lib.navigation" />
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<f:render partial="BrowseHappyForIE6" section="Content"/>
+	</div>
+	<f:render section="Content" />
+</div>
+
+<div class="container">
+	<hr>
+	<footer class="row">
+		<div class="col-md-6">
+			<p>© {settings.companyName} 2011-{currentYear}</p>
+			<p>
+				<f:translate extensionName="ot_website" id="page_created" arguments="{0: '{f:format.date(date: \'@{data.crdate}\', format: \'{f:translate(id: \\\'formatDate\\\', extensionName: \\\'ot_website\\\')}\')}'}" />
+			</p>
+		</div>
+	</footer>
+</div>

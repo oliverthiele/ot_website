@@ -1,0 +1,5 @@
+plugin {
+	tx_felogin_pi1 {
+		# templateFile = EXT:ot_website/Private/Resources/Private/Templates/Ext/Felogin/Template.html
+	}
+}

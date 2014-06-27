@@ -1,0 +1,7 @@
+[globalVar = GP:L=1]
+config {
+	language = en
+	locale_all = en_US.utf8
+	sys_language_uid = 1
+}
+[global]

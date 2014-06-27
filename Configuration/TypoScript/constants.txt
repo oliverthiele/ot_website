@@ -1,0 +1,27 @@
+/**
+ * constants.txt
+ *
+ * @author Oliver Thiele
+ */
+plugin.tx_otwebsite {
+	settings {
+		# cat=plugin.tx_otwebsite/others; type=string; label=Company Name:Company name for Navbar and Footer
+		companyName =
+	}
+}
+
+
+// Oben ist für den Konstanteneditor, unten die gespeicherten Änderungen
+
+plugin.tx_otwebsite.settings.companyName = Oliver Thiele
+
+styles.content.imgtext.maxWInText = 0
+styles.content.imgtext.linkWrap.width = 800
+styles.content.imgtext.linkWrap.lightboxEnabled = 1
+styles.content.imgtext.linkWrap.lightboxCssClass = fancybox
+styles.content.imgtext.linkWrap.lightboxRelAttribute = lightbox{field:uid}
+styles.content.loginform.pid = 3
+
+
+// Copy from version 6.2 LTS
+styles.content.loginform.templateFile = EXT:ot_website/Resources/Private/Templates/Ext/Felogin/Template.html

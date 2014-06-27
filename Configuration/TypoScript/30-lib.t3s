@@ -1,0 +1,79 @@
+lib {
+	navigation = COA
+	navigation {
+		stdWrap.wrap = <ul class="nav navbar-nav">|</ul>
+		5 = TEXT
+		5 {
+			value = <li>
+			override {
+				cObject = TEXT
+				cObject {
+					value = <li class="active">
+				}
+				if {
+					value.data = TSFE:id
+					equals = 1
+				}
+			}
+		}
+
+		10 = TEXT
+		10 {
+			value = Home
+			data =  levelfield: 0, nav_title // leveltitle: 0
+			stdWrap {
+				typolink.parameter = 1
+				wrap = |</li>
+			}
+		}
+
+		20 = HMENU
+		20 {
+			special = directory
+			special.value = 1
+
+			1 = TMENU
+			1 {
+				expAll = 1
+				// wrap =  <ul class="nav navbar-nav">|</ul>
+				NO = 1
+				NO {
+					wrapItemAndSub = <li>|</li>
+					stdWrap.htmlSpecialChars = 1
+				}
+				CUR < .NO
+				CUR {
+					wrapItemAndSub = <li class="active">|</li>
+				}
+				IFSUB < .NO
+				IFSUB {
+					wrapItemAndSub = <li class="dropdown">|</li>
+					doNotLinkIt = 1
+					linkWrap = <a data-toggle="dropdown" class="dropdown-toggle" href="#">| <b class="caret"></b></a>
+				}
+			}
+			2 < .1
+			2 {
+				wrap = <ul class="dropdown-menu">|</ul>
+				IFSUB >
+			}
+		}
+	}
+	sidebarNav = HMENU
+	sidebarNav {
+		entryLevel = 1
+		1 = TMENU
+		1 {
+			wrap =  <div class="list-group">|</div>
+			NO = 1
+			NO {
+				stdWrap.htmlSpecialChars = 1
+				ATagParams = class="list-group-item"
+			}
+			CUR < .NO
+			CUR {
+				ATagParams = class="list-group-item active"
+			}
+		}
+	}
+}

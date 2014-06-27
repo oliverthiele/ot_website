@@ -1,0 +1,1 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:ot_website/Configuration/TypoScript" extensions="t3s">

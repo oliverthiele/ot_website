@@ -1,0 +1,28 @@
+aside_content < tt_content
+aside_content.image >
+aside_content.image = COA
+aside_content.image {
+	10 = TEXT
+	10.field = header
+	10.wrap = <h2>|</h2>
+	10 >
+	20 = FILES
+	20 {
+		references {
+			table = tt_content
+			uid.field = uid
+			fieldName = image
+		}
+		renderObj = IMAGE
+		renderObj {
+			file {
+				import.data = file:current:publicUrl
+				maxW = 400
+			}
+			params = class="img-rounded img-responsive"
+			altText.data = file:current:alternative
+			titleText.data = file:current:title
+			wrap = <figure>|</figure>
+		}
+	}
+}

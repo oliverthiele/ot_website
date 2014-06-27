@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-06-23T17:05:17Z"
+		  product-name="mm_website">
+		<header/>
+		<body>
+			<trans-unit id="toHome">
+				<source>Home</source>
+				<target>Zur Startseite</target>
+			</trans-unit>
+			<trans-unit id="toggle_navigation">
+				<source>Toggle navigation</source>
+				<target>Nav. einblenden</target>
+			</trans-unit>
+			<trans-unit id="page_created">
+				<source>Page was created on %1s.</source>
+				<target>Diese Seite wurde am %1s erstellt.</target>
+			</trans-unit>
+			<trans-unit id="formatDate">
+				<source>m/d/Y H:i</source>
+				<target>d.m.Y \u\m H:i</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

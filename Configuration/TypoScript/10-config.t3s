@@ -1,0 +1,15 @@
+config {
+	# locallang.xlf
+	language = de
+	# PHP: Zeit/Währung/...
+	locale_all = de_DE.utf8
+	# DB
+	sys_language_uid = 0
+	# Nur Inhalte als Fallback in der Std. Sprache
+	sys_language_mode = content_fallback
+	# GET-Parameter mit Validierung
+	linkVars = L(1-2)
+
+	sendCacheHeaders = 1
+	cache_period = 86400
+}

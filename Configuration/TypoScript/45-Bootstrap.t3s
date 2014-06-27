@@ -1,0 +1,52 @@
+tt_content.stdWrap.innerWrap.cObject >
+tt_content.stdWrap.innerWrap.cObject = TEXT
+tt_content.stdWrap.innerWrap.cObject.value = <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">|</div>
+tt_content.stdWrap.innerWrap.override {
+	cObject = COA
+	cObject {
+		10 = TEXT
+		10 {
+			stdWrap {
+				cObject = COA
+				cObject {
+					10 = TEXT
+					10 {
+						field = bootstrap_col_xs
+						if.isTrue.field = bootstrap_col_xs
+						noTrimWrap = | col-xs-| |
+					}
+					20 = TEXT
+					20 {
+						field = bootstrap_col_sm
+						if.isTrue.field = bootstrap_col_sm
+						noTrimWrap = | col-sm-| |
+					}
+					30 = TEXT
+					30 {
+						field = bootstrap_col_md
+						if.isTrue.field = bootstrap_col_md
+						noTrimWrap = | col-md-| |
+					}
+					40 = TEXT
+					40 {
+						field = bootstrap_col_lg
+						if.isTrue.field = bootstrap_col_lg
+						noTrimWrap = | col-lg-| |
+					}
+					50 = TEXT
+					50 {
+						field = bootstrap_css
+						required = 1
+					}
+				}
+				trim = 1
+			}
+			required = 1
+			wrap = <div class="|">
+			append = TEXT
+			append.value = |</div>
+		}
+	}
+}
+tt_content.image.20.1.params = class="img-responsive img-rounded"
+tt_content.div.wrap = </div><div class="row"><div class="divider">|</div>
