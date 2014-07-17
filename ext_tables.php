@@ -2,11 +2,11 @@
 if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-	$_EXTKEY,
-	'Pi1',
-	''
-);
+//\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+//	$_EXTKEY,
+//	'Pi1',
+//	'Website'
+//);
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Website');
 
@@ -102,11 +102,21 @@ $tempColumns = Array(
 	),
 	'bootstrap_css' => Array(
 		'exclude' => 1,
-		'label' => 'CSS',
+		'label' => 'CSS for outer <div>',
 		'config' => array(
 			'type' => 'input',
 			'size' => '30',
-			'max' => '250',
+			'max' => '255',
+			'eval' => ''
+		)
+	),
+	'bootstrap_css_inner' => Array(
+		'exclude' => 1,
+		'label' => 'CSS for inner <div>',
+		'config' => array(
+			'type' => 'input',
+			'size' => '30',
+			'max' => '255',
 			'eval' => ''
 		)
 	),
@@ -114,4 +124,7 @@ $tempColumns = Array(
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tt_content', $tempColumns);
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', ', --div--;Bootstrap, bootstrap_col_xs, bootstrap_col_sm, bootstrap_col_md, bootstrap_col_lg, bootstrap_css', '', 'after:categories');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tt_content', ', --div--;Bootstrap, bootstrap_col_xs, bootstrap_col_sm, bootstrap_col_md, bootstrap_col_lg, bootstrap_css, bootstrap_css_inner', '', 'after:categories');
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ot_website/Configuration/TypoScript/pageTSconfig.ts">');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:ot_website/Configuration/TypoScript/userTSconfig.ts">');
