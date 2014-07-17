@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
 	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2014-06-23T17:05:17Z"
-		  product-name="mm_website">
+		  product-name="ot_website">
 		<header/>
 		<body>
 			<trans-unit id="toHome">

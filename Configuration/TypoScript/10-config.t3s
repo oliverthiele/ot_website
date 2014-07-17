@@ -12,4 +12,8 @@ config {
 
 	sendCacheHeaders = 1
 	cache_period = 86400
+
+	disablePrefixComment = 1
+
+	disableImgBorderAttr = 1
 }

@@ -5,7 +5,7 @@ backend_layout {
 		1 {
 			columns {
 				1 {
-					name = Inhalt
+					name = LLL:EXT:ot_website/Resources/Private/Language/locallang_db.xlf:backendlayout.content
 					colPos = 0
 				}
 			}

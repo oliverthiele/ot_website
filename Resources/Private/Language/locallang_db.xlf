@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-06-23T17:05:17Z" product-name="ot_website">
+		<header/>
+		<body>
+			<trans-unit id="backendlayout.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="header_1">
+				<source>Header 1</source>
+			</trans-unit>
+			<trans-unit id="header_2">
+				<source>Header 2</source>
+			</trans-unit>
+			<trans-unit id="header_3">
+				<source>Header 3</source>
+			</trans-unit>
+			<trans-unit id="header_4">
+				<source>Header 4</source>
+			</trans-unit>
+			<trans-unit id="header_5">
+				<source>Header 5</source>
+			</trans-unit>
+			<trans-unit id="hidden">
+				<source>Hidden</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
