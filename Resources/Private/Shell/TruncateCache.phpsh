@@ -1,0 +1,35 @@
+#!/usr/bin/php -q
+<?php
+/**
+ * Truncates all TYPO3 cf_% and cache_% database tables
+ */
+
+function fetchArray($in) {
+	if(is_file($in)) {
+		return include $in;
+	} else {
+		return false;
+	}
+}
+$typo3Configuration = fetchArray('../../../../../LocalConfiguration.php');
+
+$db = $typo3Configuration['DB'];
+
+$link = mysqli_connect($db['host'], $db['username'], $db['password'], $db['database']) or die ("Error " . mysqli_error($link));
+
+$query = "set names 'utf8'";
+$link->query($query);
+
+$query = 'SHOW TABLES FROM ' . $db['database'] . ' WHERE Tables_in_' . $db['database'] . ' LIKE \'cf_%\' OR Tables_in_' . $db['database'] . ' LIKE \'cache_%\';';
+$result = $link->query($query);
+
+if($result) {
+	while($row = mysqli_fetch_array($result)) {
+		$tables[] = $row['Tables_in_' . $db['database']];
+		$truncateQuery = 'TRUNCATE ' . $row['Tables_in_'. $db['database']] . ';';
+		echo $truncateQuery . "\n";
+		$res = $link->query($truncateQuery);
+	}
+	mysqli_free_result($result);
+}
+mysqli_close($link);
